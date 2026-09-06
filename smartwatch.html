@@ -1,0 +1,41 @@
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./../BOOTSTRAP/bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <nav class="navbar bg-info navbar-dark navbar-expand-md">
+        <div class="container-fluid">
+                <a class="fw-bold navbar-brand"></a>
+            </div>
+    </nav>
+        <div>
+            <section class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-4 m-auto">
+                    <div class="card">
+                    <div class="card-header bg-white text-black text-center">
+                    <h1>Digital watch</h1>
+                    <h4>Asia/Kolkata</h4>
+                    <h3 id="time-ele">time</h3>
+                    <h3 id="date-ele">date</h3>
+                    </div>
+                </div> 
+            </div>
+<script>
+    let timeEle=document.getElementById("time-ele")
+    let dateEle=document.getElementById("date-ele")
+
+    function time()
+    {
+        let d=new date()
+        let time=d.toLocaleleTimeString();
+        let date=d.toLocaleleDateString();
+
+        timeEle.textcontent=currtime;
+        dateEle.textcontent=currdate;
+
+
+    }
+</script>
+</div>
+</body>

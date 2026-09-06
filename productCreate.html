@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css"/>
+    <style>
+        .bg-warning,.btn-warning
+{
+    background: linear-gradient(45deg, rgb(208, 122, 63), rgb(75, 38, 19));
+}
+#landing-page 
+{
+    background-color:yellow;
+    height:100vh;
+}
+#landing-page>.content-section
+{
+    background:brown url(./jcart.avif) no-repeat;
+    background-size:cover;
+    height:inherit;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Main Navbar -->
+    <nav class="navbar bg-warning navbar-dark navbar-expand-md">
+        <div class="container-fluid">
+            <a href="./index.html" class="fw-bold navbar-brand">🛒 JKART</a>
+
+            <!-- Links Section -->
+             <div>
+                <ul class="navbar-nav me-auto mb-2 ">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="./products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="./admin.html">Admin</a>
+                    </li>
+                </ul>
+             </div>
+    </nav>
+
+    <section class="container-fluid mt-5">
+        <div class="row">
+            <div class="col">
+                <h1>Create A Product:-</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsa accusantium eveniet blanditiis ipsum? Natus eius recusandae nostrum aperiam, veritatis quod consectetur voluptatem nam mollitia placeat ab? Possimus sequi est molestias nesciunt vel, esse maiores ad, qui harum aspernatur, quae numquam! Facere neque blanditiis, sint sit minima minus? Ad, molestias!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-header bg-warning text-white">
+                        <h2>Create Product</h2>
+                    </div>
+                    <div class="card-body bg-light">
+                        <form>
+                            <div class="mb-2">
+                                <input type="text" placeholder="Name" class="form-control">
+                            </div>
+                            <div class="input-group mb-2">
+                                <input type="file" class="form-control">
+                            </div>
+                            <div class="mb-2">
+                                <input type="" placeholder="price" class="form-control">
+                            </div>
+                            <div class="mb-2">
+                                <textarea placeholder="Description" class="form-control"></textarea>
+                            </div>
+                            <div class="mb-2">
+                                <input type="text" placeholder="Rating" class="form-control">
+                            </div>
+                            <div class="mb-2">
+                                <!-- <input type="submit" class="btn btn-warning text-white" value="Create"> -->
+                                 <a href="./admin.html" class="btn btn-warning text-white">Create</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-bottom:500px;"></footer>
+</body>
+</html>

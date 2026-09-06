@@ -1,0 +1,15 @@
+.bg-warning,.btn-warning
+{
+    background: linear-gradient(45deg, rgb(208, 122, 63), rgb(75, 38, 19));
+}
+#landing-page 
+{
+    background-color:yellow;
+    height:100vh;
+}
+#landing-page>.content-section
+{
+    background:brown url(./jcart.avif) no-repeat;
+    background-size:cover;
+    height:inherit;
+}
