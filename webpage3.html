@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Animated Web Page</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#081b29;
+    color:white;
+}
+
+/* Navigation */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(0,0,0,.3);
+    position:fixed;
+    width:100%;
+    backdrop-filter:blur(8px);
+    z-index:100;
+}
+
+.logo{
+    font-size:35px;
+    font-weight:bold;
+    color:#00ffff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:.4s;
+}
+
+nav ul li a:hover{
+    color:#00ffff;
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    overflow:hidden;
+}
+
+.hero h1{
+    font-size:65px;
+    animation:slideDown 2s ease;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:22px;
+    animation:fadeIn 4s;
+}
+
+.hero button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#00ffff;
+    cursor:pointer;
+    font-size:18px;
+    transition:.4s;
+}
+
+.hero button:hover{
+    transform:scale(1.1);
+}
+
+/* Floating circles */
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    animation:float 12s linear infinite;
+    opacity:.3;
+}
+
+.c1{
+    width:120px;
+    height:120px;
+    background:cyan;
+    left:10%;
+    top:90%;
+}
+
+.c2{
+    width:180px;
+    height:180px;
+    background:violet;
+    left:70%;
+    top:100%;
+    animation-duration:15s;
+}
+
+.c3{
+    width:80px;
+    height:80px;
+    background:yellow;
+    left:40%;
+    top:110%;
+    animation-duration:10s;
+}
+
+/* Cards */
+
+.container{
+
+    width:90%;
+    margin:auto;
+    padding:80px 0;
+
+}
+
+.title{
+
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+
+}
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+
+}
+
+.card{
+
+    background:#112e42;
+    padding:30px;
+    border-radius:15px;
+    transition:.5s;
+    opacity:0;
+    animation:appear 1s forwards;
+
+}
+
+.card:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+.card:nth-child(3){
+
+    animation-delay:1s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-15px) rotate(2deg);
+    box-shadow:0 0 20px cyan;
+
+}
+
+.card h2{
+
+    margin-bottom:15px;
+    color:cyan;
+
+}
+
+/* Counter */
+
+.counter{
+
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    margin-top:70px;
+
+}
+
+.box{
+
+    text-align:center;
+    margin:20px;
+
+}
+
+.number{
+
+    font-size:60px;
+    color:#00ffff;
+
+}
+
+/* Contact */
+
+.contact{
+
+    width:80%;
+    margin:80px auto;
+
+}
+
+input,textarea{
+
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+
+}
+
+textarea{
+
+    height:140px;
+
+}
+
+input[type=button]{
+
+    background:#00ffff;
+    cursor:pointer;
+    font-size:18px;
+
+}
+
+footer{
+
+    background:black;
+    text-align:center;
+    padding:20px;
+
+}
+
+/* Animations */
+
+@keyframes slideDown{
+
+    from{
+
+        transform:translateY(-150px);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes float{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-130vh);
+
+    }
+
+}
+
+@keyframes appear{
+
+    from{
+
+        opacity:0;
+        transform:translateY(100px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<nav>
+
+<div class="logo">FutureTech</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+<li><a href="#service">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1 id="typing"></h1>
+
+<p>
+Create Amazing Websites with HTML, CSS and JavaScript
+</p>
+
+<button onclick="welcome()">
+
+Explore
+
+</button>
+
+</section>
+
+<section class="container" id="service">
+
+<h1 class="title">
+
+Our Features
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>Responsive Design</h2>
+
+<p>
+
+Works on desktop, tablet and mobile devices.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Animations</h2>
+
+<p>
+
+Smooth hover effects, floating objects and transitions.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>JavaScript</h2>
+
+<p>
+
+Interactive elements with dynamic functionality.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="counter">
+
+<div class="box">
+
+<div class="number" id="n1">0</div>
+
+<p>Projects</p>
+
+</div>
+
+<div class="box">
+
+<div class="number" id="n2">0</div>
+
+<p>Students</p>
+
+</div>
+
+<div class="box">
+
+<div class="number" id="n3">0</div>
+
+<p>Clients</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h1 class="title">
+
+Contact Us
+
+</h1>
+
+<input type="text" placeholder="Enter Name">
+
+<input type="email" placeholder="Enter Email">
+
+<textarea placeholder="Enter Message"></textarea>
+
+<input type="button" value="Submit" onclick="submitData()">
+
+</section>
+
+<footer>
+
+<h3>
+
+Advanced Animated Website | HTML + CSS + JavaScript
+
+</h3>
+
+</footer>
+
+<script>
+
+function welcome(){
+
+    alert("Welcome to FutureTech!");
+
+}
+
+/* Typing Animation */
+
+let text="WELCOME TO FUTURETECH";
+
+let i=0;
+
+function typing(){
+
+    if(i<text.length){
+
+        document.getElementById("typing").innerHTML+=text.charAt(i);
+
+        i++;
+
+        setTimeout(typing,120);
+
+    }
+
+}
+
+typing();
+
+/* Counter Animation */
+
+function counter(id,target){
+
+    let value=0;
+
+    let interval=setInterval(function(){
+
+        value++;
+
+        document.getElementById(id).innerHTML=value;
+
+        if(value>=target){
+
+            clearInterval(interval);
+
+        }
+
+    },20);
+
+}
+
+counter("n1",150);
+
+counter("n2",800);
+
+counter("n3",120);
+
+/* Contact Button */
+
+function submitData(){
+
+    alert("Thank You! Your details have been submitted.");
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <nav class="navbar bg-info navbar-dark navbar-expand-md">
+        <div class="container-fluid">
+                <a class="fw-bold navbar-brand">jcounter</a>
+            </div>
+    </nav>
+        <div>
+            <section class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-4 m-auto">
+                    <div class="card">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h2>Username Box</h2>
+                    </div>
+                    <div class="card-body text-center">
+                        <form>
+                            <div class="mb-2">
+                            <input type="text" placeholder="Enter Username" class="form-control" id="usn-box"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer bg-dark text-center text text-white">
+                        <h2 id="display-name">Username</h2>
+                    </div>
+                </div> 
+            </div>
+        </div>
+            </section>
+         <footer style="margin: bottom 400px;"></footer>
+        </body>
+        <!--script code-->
+         <script>
+            let usnEle=document.getElementById('usn-box');
+            let displayEle=document.getElementById('display-name');
+    
+            usnEle.addEventListener('keyup',function(){
+
+                let enteredName=usnEle.value;
+                displayEle.textcontent=enteredName;
+
+            });
+
+         </script>
+        </div>
+

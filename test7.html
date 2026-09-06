@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+    <nav class="navbar bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Js DOM</a>
+      </div>
+    </nav>
+
+    <section class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-4 m-auto">
+                <div class="card">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h2>Js Counter App</h2
+                    </div>
+                    <div class="card-body text-center">
+                        <h2>Count Value</h2>
+                        <h3 id="count-ele"></h3>
+                        <button class="btn btn-danger" onclick="decCount();">DEC</button>
+                        <button class="btn btn-success" onclick="incCount();">INC</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Script Code -->
+<script>
+    let countEle=document.getElementById('count-ele');
+    let c;
+
+    if(+localStorage.getItem('count'))
+    {
+        c=+localStorage.getItem('count');
+    }
+    else 
+    {
+        c=0;
+    }
+
+    countEle.textContent=c;
+
+    function incCount()
+    {
+        c=c+1;
+        localStorage.setItem('count',c);
+        countEle.textContent=+localStorage.getItem('count');
+        changeColor("green");
+    }
+
+    function decCount()
+    {
+        if(c>0)
+        {
+            c=c-1;
+            localStorage.setItem('count',c);
+            countEle.textContent=+localStorage.getItem('count');
+            changeColor("red");
+        }
+    }
+
+    function changeColor(col)
+    {
+        countEle.style.color=col;
+    }
+</script>
+  </body>
+</html>
+    </section>
+    
+</body>
+</html>

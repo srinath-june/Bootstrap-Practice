@@ -1,0 +1,85 @@
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <nav class="navbar bg-success navbar-dark navbar-expand-md">
+        <div class="container-fluid">
+                <a class="fw-bold navbar-brand">jcounter</a>
+            </div>
+    </nav>
+        <div>
+            <section class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-4 m-auto">
+                    <div class="card">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h2>Login Form</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="Login-form">
+                            <div class="mb-2">
+                                <input type="text" placeholder="Enter Username"
+                                class="from-control" id="usn-ele"/>
+                            </div>
+                            <div class="mb-2">
+                                <input type="password" placeholder="Enter the password"
+                                class="from-control" id="pw-ele"/>
+                            </div>
+                    </div>
+                    <div >
+                        <input type="Submit" class="btn btn-dark"/>
+                    </div>
+                    </div>
+              </div> 
+         </div>
+        </body>
+        <!--script code-->
+         <script>
+           let formEle=document.getElementById('login-form')
+           let usnEle=document.getElementById('usn-ele')
+           let pwEle=document.getElementById('pw-ele')
+
+           let users=null;
+
+           if(localStorage.getItem('users'))
+           {
+            users=JSON.parse(localStorage.getItem('users'));
+            console.log(users,typeof users);
+           }
+           else
+           {
+              users=[];
+           }
+
+           formEle.addEventListener('submit',function(e)
+           {
+
+            e.preventDefault();
+
+            let usn=usnEle.value;
+            let pw=pwEle.value;
+
+            let user={username:usn,password:pw};
+            //console.log(user);
+
+            users.push(user);
+
+            localStorage.setItem('users',JSON.stringify(users));
+
+            usnEle.value="";
+            pwEle.value="";
+
+           });
+
+
+           for(let user of users)
+           {
+            console.log(user,username);
+           }
+
+
+         </script>
+        </div>
+        </html>
+

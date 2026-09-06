@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Solutions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    overflow-x:hidden;
+}
+
+/* Navigation */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#0d1b2a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    z-index:1000;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#00d4ff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:.4s;
+}
+
+nav ul li a:hover{
+    color:#00d4ff;
+}
+
+/* Hero Section */
+
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:70px;
+    animation:slideDown 2s ease;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:24px;
+    width:70%;
+    animation:fadeIn 3s ease;
+}
+
+.hero button{
+    margin-top:30px;
+    padding:15px 40px;
+    border:none;
+    background:#00d4ff;
+    color:black;
+    font-size:18px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.5s;
+}
+
+.hero button:hover{
+    transform:scale(1.1);
+}
+
+/* Floating Animation */
+
+.bubble{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.2);
+    animation:float 15s infinite linear;
+}
+
+.b1{
+    width:100px;
+    height:100px;
+    left:10%;
+    top:100%;
+}
+
+.b2{
+    width:150px;
+    height:150px;
+    left:70%;
+    top:120%;
+}
+
+.b3{
+    width:70px;
+    height:70px;
+    left:40%;
+    top:110%;
+}
+
+/* Sections */
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    color:#0d1b2a;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.5s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+}
+
+.card h3{
+    color:#0077b6;
+    margin-bottom:15px;
+}
+
+/* Statistics */
+
+.stats{
+    background:#0d1b2a;
+    color:white;
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    padding:70px 20px;
+}
+
+.stat{
+    text-align:center;
+    margin:20px;
+}
+
+.number{
+    font-size:60px;
+    color:#00d4ff;
+}
+
+/* Team */
+
+.team{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.member{
+    background:white;
+    text-align:center;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.5s;
+}
+
+.member:hover{
+    transform:scale(1.05);
+}
+
+.member img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+}
+
+/* Contact */
+
+.contact{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+input,textarea{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+textarea{
+    height:140px;
+}
+
+.btn{
+    background:#0077b6;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    background:#0d1b2a;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Animations */
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-100px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-140vh);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+
+<nav>
+    <div class="logo">TechNova</div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <h1 id="typing"></h1>
+
+    <p>
+        We provide innovative software solutions,
+        cloud services, web development, AI solutions,
+        and digital transformation services worldwide.
+    </p>
+
+    <button onclick="showMessage()">
+        Explore Services
+    </button>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">
+        Our Services
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Modern responsive websites and enterprise applications.</p>
+        </div>
+
+        <div class="card">
+            <h3>Mobile Apps</h3>
+            <p>Android and iOS applications with modern UI/UX.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cloud Computing</h3>
+            <p>Secure cloud deployment and infrastructure solutions.</p>
+        </div>
+
+        <div class="card">
+            <h3>Artificial Intelligence</h3>
+            <p>Machine learning and predictive analytics solutions.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stat">
+        <div class="number" id="c1">0</div>
+        <h3>Projects</h3>
+    </div>
+
+    <div class="stat">
+        <div class="number" id="c2">0</div>
+        <h3>Clients</h3>
+    </div>
+
+    <div class="stat">
+        <div class="number" id="c3">0</div>
+        <h3>Employees</h3>
+    </div>
+
+    <div class="stat">
+        <div class="number" id="c4">0</div>
+        <h3>Countries</h3>
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">
+        Leadership Team
+    </h2>
+
+    <div class="team">
+
+        <div class="member">
+            <img src="Srinath pospot img.png" alt="">
+            <h3>Srinath S</h3>
+            <p>Project Developer</p>
+        </div>
+
+        <div class="member">
+            <img src="https://via.placeholder.com/120" alt="">
+            <h3>Sai kumar</h3>
+            <p>Java Developer</p>
+        </div>
+
+        <div class="member">
+            <img src="https://via.placeholder.com/120" alt="">
+            <h3>Thousif </h3>
+            <p>Java fullstack developer</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <div class="contact">
+
+        <input type="text" placeholder="Enter Name">
+
+        <input type="email" placeholder="Enter Email">
+
+        <textarea placeholder="Enter Message"></textarea>
+
+        <input
+        type="button"
+        value="Send Message"
+        class="btn"
+        onclick="submitForm()">
+
+    </div>
+
+</section>
+
+<footer>
+    <h3>© 2026 Tech Solutions | All Rights Reserved</h3>
+</footer>
+
+<script>
+
+/* Typing Animation */
+
+let text="WELCOME TO TECHNOVA SOLUTIONS";
+let i=0;
+
+function typing(){
+    if(i<text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing,100);
+    }
+}
+typing();
+
+/* Button */
+
+function showMessage(){
+    alert("Welcome to TechNova Solutions");
+}
+
+function submitForm(){
+    alert("Thank You! We will contact you soon.");
+}
+
+/* Counter Animation */
+
+function count(id,target){
+
+    let num=0;
+
+    let timer=setInterval(function(){
+
+        num++;
+
+        document.getElementById(id).innerHTML=num;
+
+        if(num>=target){
+            clearInterval(timer);
+        }
+
+    },10);
+
+}
+
+count("c1",500);
+count("c2",300);
+count("c3",120);
+count("c4",25);
+
+</script>
+
+</body>
+</html>
